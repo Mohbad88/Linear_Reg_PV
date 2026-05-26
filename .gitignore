@@ -40,11 +40,30 @@ Thumbs.db
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data & Models (optional - ajuster selon vos besoins)
-# data/raw/
-# data/processed/
-# outputs/
-# downloaded_model/
+# Data & Models (large files, not source code)
+data/raw/*.csv
+data/raw/*.pkl
+data/processed/*.csv
+data/processed/*.pkl
+outputs/
+downloaded_model/
+*.pkl
+*.joblib
 
-# Logs
+# Logs & Results
 *.log
+error_logs.json
+inference_results.json
+*.tmp
+
+# Azure ML
+.amlignore
+.amltmp/
+
+# Jupyter checkpoints & backups
+*-checkpoint.ipynb
+*-checkpoint-checkpoint.ipynb
+
+# Environment files
+.env
+.env.local

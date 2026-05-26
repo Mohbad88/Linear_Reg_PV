@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 import numpy as np
 import pandas as pd
+from typing import Dict
 
 
 def aggregate_daily(df: pd.DataFrame) -> pd.DataFrame:
@@ -36,7 +39,7 @@ def aggregate_daily(df: pd.DataFrame) -> pd.DataFrame:
         'day_cos',
     ]
 
-    rules: dict[str, str] = {}
+    rules: Dict[str, str] = {}
     for c in sum_cols:
         rules[c] = 'sum'
     for c in mean_cols:

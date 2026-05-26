@@ -1,9 +1,12 @@
+from __future__ import annotations
+
 import pandas as pd
+from typing import Optional, List
 
 def clean_dataset(
     df,
     pv_col: str = "PV_ELE_IME_I_001",
-    zero_check_cols: list | None = None,
+    zero_check_cols: Optional[List[str]] = None,
     min_production_wh: float = 1000.0,
 ) -> pd.DataFrame:
     """Drop rows with invalid or too‑low production values.

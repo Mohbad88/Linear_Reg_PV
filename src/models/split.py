@@ -1,11 +1,14 @@
+from __future__ import annotations
+
 import pandas as pd
+from typing import Tuple, Union
 
 
 def train_test_split_by_date(
     X: pd.DataFrame,
     y: pd.Series,
-    split_date: str | pd.Timestamp,
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    split_date: Union[str, pd.Timestamp],
+) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """Partition features/target according to a cutoff date.
 
     Records with index strictly before ``split_date`` go to the training set;
